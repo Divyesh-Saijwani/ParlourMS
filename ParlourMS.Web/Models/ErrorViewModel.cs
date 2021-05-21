@@ -1,5 +1,3 @@
-using System;
-
 namespace ParlourMS.Web.Models
 {
     public class ErrorViewModel

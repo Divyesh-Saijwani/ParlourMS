@@ -1,10 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace ParlourMS.Web.Data
+namespace ParlourMS.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
