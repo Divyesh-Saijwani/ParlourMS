@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ParlourMS.BL;
 using ParlourMS.Data;
+using ParlourMS.Data.Models;
 
 namespace ParlourMS.Web
 {
@@ -24,7 +25,7 @@ namespace ParlourMS.Web
         {
             services.AddParlourMSDataServices ( Configuration.GetConnectionString ( "DefaultConnection" ) );
 
-            services.AddDefaultIdentity<IdentityUser> ( options => options.SignIn.RequireConfirmedAccount = true )
+            services.AddDefaultIdentity<User> ( options => options.SignIn.RequireConfirmedAccount = true )
                 .AddEntityFrameworkStores<ApplicationDbContext> ();
             services.AddControllersWithViews ();
 
