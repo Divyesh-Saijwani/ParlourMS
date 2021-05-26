@@ -8,8 +8,4 @@
     <ProjectReference Include="..\ParlourMS.Data\ParlourMS.Data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\Interfaces\" />
-  </ItemGroup>
-
 </Project>

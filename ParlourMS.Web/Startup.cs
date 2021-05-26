@@ -30,6 +30,9 @@ namespace ParlourMS.Web
             services.AddControllersWithViews ();
 
             services.AddParlourMSBusinessServices ();
+            services.AddRazorPages ();
+            services.AddScoped<SignInManager<User>, SignInManager<User>> ();
+            services.AddScoped<UserManager<User>, UserManager<User>> ();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

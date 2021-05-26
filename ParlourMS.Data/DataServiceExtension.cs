@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using ParlourMS.Data.Repositories;
+using ParlourMS.Data.Repositories.Interfaces;
 
 namespace ParlourMS.Data
 {
@@ -10,6 +12,9 @@ namespace ParlourMS.Data
             services.AddDbContext<ApplicationDbContext> ( options =>
                   options.UseSqlServer ( connectionString ) );
             services.AddDatabaseDeveloperPageExceptionFilter ();
+
+            services.AddTransient<IUserRepository, UserRepository> ();
+
             return services;
         }
     }

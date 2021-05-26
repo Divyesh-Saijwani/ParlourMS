@@ -1,0 +1,38 @@
+﻿@model List<ParlourMS.Data.Models.User>
+@{
+    ViewData["Title"] = "User List";
+}
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">User Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone No</th>
+            <th scope="col">Status</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach ( var user in Model )
+        {
+            <tr>
+                <th scope="row">1</th>
+                <td>@user.FirstName</td>
+                <td>@user.LastName</td>
+                <td>@user.UserName</td>
+                <td>@user.Email</td>
+                <td>@user.PhoneNumber</td>
+                <td>@(user.EmailConfirmed?"Active":"InActive")</td>
+                <td></td>
+            </tr>
+        }
+
+
+
+    </tbody>
+</table>
