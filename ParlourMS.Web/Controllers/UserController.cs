@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ParlourMS.BL.Services.Interfaces;
+using ParlourMS.Data.Models;
 
 namespace ParlourMS.Web.Controllers
 {
@@ -29,16 +30,17 @@ namespace ParlourMS.Web.Controllers
         // GET: UserController/Create
         public ActionResult Create ()
         {
-            return View ();
+            return View (new User());
         }
 
         // POST: UserController/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create ( IFormCollection collection )
+        //[ValidateAntiForgeryToken]
+        public ActionResult Create ( User user )
         {
             try
             {
+                _userService.AddUser ( user );
                 return RedirectToAction ( nameof ( Index ) );
             }
             catch
@@ -48,9 +50,10 @@ namespace ParlourMS.Web.Controllers
         }
 
         // GET: UserController/Edit/5
-        public ActionResult Edit ( int id )
+        public ActionResult Edit ( string id )
         {
-            return View ();
+            var user=_userService.GetUser(id);
+            return View ( user );
         }
 
         // POST: UserController/Edit/5

@@ -14,6 +14,18 @@ namespace ParlourMS.Data.Repositories
             _context = context;
         }
 
+        public User AddUser ( User user )
+        {
+            var result = _context.Users.Add ( user );
+            _context.SaveChanges ();
+            return result.Entity;
+        }
+
+        public User GetUser ( string id )
+        {
+            return _context.Users.Find(id);
+        }
+
         public List<User> GetUserList ()
         {
             return _context.Users.ToList ();

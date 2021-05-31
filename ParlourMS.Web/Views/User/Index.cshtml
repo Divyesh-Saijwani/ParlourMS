@@ -21,7 +21,7 @@
         @foreach ( var user in Model )
         {
             <tr>
-                <th scope="row">1</th>
+                <th scope="row"><a href="/User/Edit/@(user.Id)">1</a> </th>
                 <td>@user.FirstName</td>
                 <td>@user.LastName</td>
                 <td>@user.UserName</td>

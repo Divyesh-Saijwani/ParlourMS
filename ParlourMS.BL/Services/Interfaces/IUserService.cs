@@ -14,5 +14,18 @@ namespace ParlourMS.BL.Services.Interfaces
         /// <returns>List of user</returns>
         List<User> GetUserList();
 
+        /// <summary>
+        /// This method is responsible for getting user details
+        /// </summary>
+        /// <returns>User details</returns>
+        User GetUser (string id);
+
+        /// <summary>
+        /// This method is responsible for adding new user
+        /// </summary>
+        /// <param name="user">User object</param>
+        /// <returns>User object</returns>
+        User AddUser (User user);
+
     }
 }
