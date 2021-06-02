@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ParlourMS.BL;
+using ParlourMS.BL.Extensions;
 using ParlourMS.Data;
 using ParlourMS.Data.Models;
 
@@ -28,6 +29,17 @@ namespace ParlourMS.Web
             services.AddDefaultIdentity<User> ( options => options.SignIn.RequireConfirmedAccount = true )
                 .AddEntityFrameworkStores<ApplicationDbContext> ();
             services.AddControllersWithViews ();
+
+            services.AddSmtpConfig ( config =>
+            {
+                config.Server = "";
+                config.Port = 0;
+                config.EnableSsl = false;
+                config.FromDisplayName = "";
+                config.FromAddress = "";
+                config.Password = "";
+                config.Domain = "";
+            } );
 
             services.AddParlourMSBusinessServices ();
             services.AddRazorPages ();

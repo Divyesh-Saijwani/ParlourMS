@@ -80,7 +80,7 @@
 
     @if ( Context.Request.Path.Value.ToLower () == "/" || Context.Request.Path.Value.ToLower () == "/home/index" || Context.Request.Path.Value.ToLower () == "/home" )
     {
-        <main>
+        <main style="margin-top:10px;">
             @RenderBody()
         </main>
     }
@@ -92,11 +92,6 @@
             </main>
         </section>
     }
-
-
-
-
-
 
     <!-- Footer strat -->
     <footer class="footer">
